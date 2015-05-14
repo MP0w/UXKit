@@ -4,12 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <UXKit/UXView.h>
+#import "UXView.h"
 
-#import "NSAccessibilityGroup.h"
-#import "UXBarPositioning.h"
+@import  AppKit;
+#import "UXBarPositioning-Protocol.h"
+#import "_UXBarItemsContainer-Protocol.h"
+#import "_UXSinglePixelLine.h"
 
-@class NSColor, NSString, UXView<_UXBarItemsContainer>, _UXSinglePixelLine;
+@class NSColor, NSString, _UXSinglePixelLine;
 
 @interface UXBar : UXView <NSAccessibilityGroup, UXBarPositioning>
 {
@@ -30,7 +32,7 @@
 @property(nonatomic) double height; // @synthesize height=_height;
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
 @property(retain, nonatomic) NSColor *barTintColor; // @synthesize barTintColor=_barTintColor;
-- (void).cxx_destruct;
+- (void)cxx_destruct;
 - (void)_updateBarPostion;
 @property(readonly, nonatomic) long long barPosition;
 - (struct CGSize)intrinsicContentSize;
@@ -48,7 +50,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
+@property(readonly) NSUInteger hash;
 @property(readonly) Class superclass;
 
 @end

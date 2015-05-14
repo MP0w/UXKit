@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <UXKit/UXView.h>
+#import "UXView.h"
 
-#import "UXLayoutSupport.h"
+#import "UXLayoutSupport-Protocol.h"
 
 @class NSLayoutConstraint, NSString;
 
@@ -20,7 +20,7 @@
 
 @property(copy, nonatomic) CDUnknownBlockType lengthUpdateBlock; // @synthesize lengthUpdateBlock=_lengthUpdateBlock;
 @property(nonatomic) BOOL horizontal; // @synthesize horizontal=_horizontal;
-- (void).cxx_destruct;
+- (void)cxx_destruct;
 - (void)_setUpDimensionConstraintWithLength:(double)arg1;
 - (void)_setUpCounterDimensionConstraint;
 @property(nonatomic) double length;
@@ -29,7 +29,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
+@property(readonly) NSUInteger hash;
 @property(readonly) Class superclass;
 
 @end

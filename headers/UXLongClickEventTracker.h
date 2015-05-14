@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <UXKit/UXEventTracker.h>
+#import "UXEventTracker.h"
 
 @class NSTimer;
 
@@ -19,7 +19,7 @@
 
 @property(nonatomic) double allowableMovement; // @synthesize allowableMovement=_allowableMovement;
 @property(nonatomic) double minimumPressDuration; // @synthesize minimumPressDuration=_minimumPressDuration;
-- (void).cxx_destruct;
+- (void)cxx_destruct;
 - (void)_minimumDurationElapsed:(id)arg1;
 - (void)_stopTimer;
 - (void)_startTimer;

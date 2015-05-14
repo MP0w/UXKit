@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <UXKit/UXView.h>
+#import "UXView.h"
 
-#import "NSAccessibilityImage.h"
+@import  AppKit;
 
 @class NSImage, NSString;
 
@@ -14,13 +14,11 @@
 {
     double _backingScaleFactor;
     struct CGSize _proposedSize;
-    NSString *accessibilityLabel;
     NSImage *_image;
 }
 
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-@property(retain, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel;
-- (void).cxx_destruct;
+- (void)cxx_destruct;
 - (void)sizeToFit;
 - (void)_updateBackingScaleFactorForWindow:(id)arg1;
 - (void)_updateLayerContentsForWindow:(id)arg1;
@@ -34,9 +32,10 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
+@property(retain, nonatomic) NSString *accessibilityLabel;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
+@property(readonly) NSUInteger hash;
 @property(readonly) Class superclass;
 
 @end

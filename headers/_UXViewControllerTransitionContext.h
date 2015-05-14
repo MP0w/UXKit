@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
 
-#import "UXViewControllerContextTransitioning.h"
+
+#import "UXViewControllerContextTransitioning-Protocol.h"
 
 @class NSArray, NSString, UXView, _UXViewControllerTransitionCoordinator;
 
@@ -58,7 +58,7 @@
 @property(nonatomic, getter=isAnimated) BOOL animated; // @synthesize animated=_animated;
 @property(nonatomic, getter=isCurrentlyInteractive) BOOL currentlyInteractive; // @synthesize currentlyInteractive=_currentlyInteractive;
 @property(nonatomic) BOOL initiallyInteractive; // @synthesize initiallyInteractive=_initiallyInteractive;
-- (void).cxx_destruct;
+- (void)cxx_destruct;
 - (void)_enableInteractionForDisabledViews;
 - (void)_disableInteractionForViews:(id)arg1;
 - (void)__runAlongsideAnimations;
@@ -85,7 +85,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
+@property(readonly) NSUInteger hash;
 @property(readonly) Class superclass;
 
 @end

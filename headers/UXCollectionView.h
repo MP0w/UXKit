@@ -4,16 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSScrollView.h"
+@import AppKit;
 
-@class CALayer, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<UXCollectionViewAccessibilityDelegate>, NSObject<UXCollectionViewDataSource>, NSObject<UXCollectionViewDelegate>, UXCollectionDocumentView, UXCollectionViewData, UXCollectionViewIndexPathsSet, UXCollectionViewLayout, UXCollectionViewMutableIndexPathsSet, UXCollectionViewUpdate, _UXCollectionViewRearrangingCoordinator;
+#import "UXCollectionViewLayout.h"
+#import "UXCollectionViewIndexPathsSet.h"
+#import "UXCollectionViewData.h"
+#import "UXCollectionViewUpdate.h"
+#import "UXCollectionViewDelegate-Protocol.h"
+#import "UXCollectionViewDataSource-Protocol.h"
+#import "UXCollectionDocumentView.h"
+#import "UXCollectionViewMutableIndexPathsSet.h"
+
+
+@class CALayer, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, UXCollectionDocumentView, UXCollectionViewData, UXCollectionViewIndexPathsSet, UXCollectionViewLayout, UXCollectionViewMutableIndexPathsSet, UXCollectionViewUpdate, _UXCollectionViewRearrangingCoordinator;
 
 @interface UXCollectionView : NSScrollView
 {
     UXCollectionDocumentView *_collectionDocumentView;
     NSObject<UXCollectionViewDataSource> *_dataSource;
     NSObject<UXCollectionViewDelegate> *_delegate;
-    NSObject<UXCollectionViewAccessibilityDelegate> *_accessibilityDelegate;
     UXCollectionViewLayout *_layout;
     UXCollectionViewMutableIndexPathsSet *_indexPathsForSelectedItems;
     NSMutableDictionary *_cellReuseQueues;
@@ -218,7 +227,7 @@
 - (void)_prepareCellsForOverdraw:(struct CGRect)arg1;
 - (void)resetScrollingOverdraw;
 - (struct CGRect)documentContentRect;
-- (void)_addControlled:(BOOL)arg1 subview:(id)arg2 atZIndex:(long long)arg3;
+- (void)_addControlledSubview:(id)arg1 atZIndex:(long long)arg2;
 - (void)updateLayout;
 - (void)_setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2 isInteractive:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
@@ -251,7 +260,7 @@
 - (void)scrollWheel:(id)arg1;
 - (void)setContentOffset:(struct CGPoint)arg1 animated:(BOOL)arg2;
 - (void)setContentOffset:(struct CGPoint)arg1;
-@property(nonatomic) struct CGSize contentSize; // @dynamic contentSize;
+@property(nonatomic) struct CGSize contentSize;
 - (void)setDocumentBounds:(struct CGRect)arg1;
 - (struct CGRect)documentBounds;
 - (struct CGSize)documentSize;
@@ -312,7 +321,6 @@
 - (id)indexPathsForSelectedItems;
 - (BOOL)_dataSourceImplementsNumberOfSections;
 - (void)_reloadDataIfNeeded;
-@property(nonatomic) __weak NSObject<UXCollectionViewAccessibilityDelegate> *accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 @property(nonatomic) __weak NSObject<UXCollectionViewDataSource> *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak NSObject<UXCollectionViewDelegate> *delegate; // @synthesize delegate=_delegate;
 - (id)_visibleDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
@@ -341,7 +349,6 @@
 - (void)draggingSession:(id)arg1 movedToPoint:(struct CGPoint)arg2;
 - (void)draggingSession:(id)arg1 willBeginAtPoint:(struct CGPoint)arg2;
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
-- (void)_dragImage:(id *)arg1 at:(struct CGPoint *)arg2 event:(id)arg3;
 - (void)rearrangingCoordinatorReloadLayout_;
 @property(readonly, nonatomic) BOOL isRearranging_;
 @property(nonatomic) double rearrangingPreviewDelay_;

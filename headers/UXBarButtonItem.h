@@ -4,16 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <UXKit/UXBarItem.h>
+#import "UXBarItem.h"
 
-#import "UXKitAppearance.h"
+#import "UXKitAppearance-Protocol.h"
 
 @class NSColor, NSString, NSView, UXViewController;
 
 @interface UXBarButtonItem : UXBarItem <UXKitAppearance>
 {
     NSView *__view;
-    BOOL _ignoresMultiClick;
     NSColor *_tintColor;
     long long _tintAdjustmentMode;
     long long _style;
@@ -32,7 +31,6 @@
 @property(nonatomic, setter=_setWidthConstrainingItem:) __weak UXBarButtonItem *_widthConstrainingItem; // @synthesize _widthConstrainingItem=__widthConstrainingItem;
 @property(readonly, nonatomic) long long systemItem; // @synthesize systemItem=_systemItem;
 @property(readonly, nonatomic) UXViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
-@property(nonatomic) BOOL ignoresMultiClick; // @synthesize ignoresMultiClick=_ignoresMultiClick;
 @property(nonatomic) unsigned long long keyEquivalentModifierMask; // @synthesize keyEquivalentModifierMask=_keyEquivalentModifierMask;
 @property(retain, nonatomic) NSString *keyEquivalent; // @synthesize keyEquivalent=_keyEquivalent;
 @property(retain, nonatomic) NSString *toolTip; // @synthesize toolTip=_toolTip;
@@ -41,7 +39,7 @@
 @property(retain, nonatomic) NSView *customView; // @synthesize customView=_customView;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
+- (void)cxx_destruct;
 @property(readonly, nonatomic) NSView *_view;
 - (void)_performAction:(id)arg1;
 - (id)_viewOfClass:(Class)arg1;
@@ -61,7 +59,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
+@property(readonly) NSUInteger hash;
 @property(readonly) Class superclass;
 
 @end

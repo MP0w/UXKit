@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <UXKit/UXViewController.h>
+#import "UXViewController.h"
 
-#import "UXNavigationControllerDelegate.h"
-#import "_UXSourceSplitViewDelegate.h"
+#import "UXNavigationControllerDelegate-Protocol.h"
+#import "_UXSourceSplitViewDelegate-Protocol.h"
 
-@class NSArray, NSMapTable, NSOperationQueue, NSSegmentedControl, NSString, NSView, UXTransitionController, UXViewController<UXSourceList>, _UXSourceSplitView, _UXViewControllerOneToOneTransitionContext;
+@class NSArray, NSMapTable, NSOperationQueue, NSSegmentedControl, NSString, NSView, UXTransitionController, _UXSourceSplitView, _UXViewControllerOneToOneTransitionContext;
 
 @interface UXSourceController : UXViewController <UXNavigationControllerDelegate, _UXSourceSplitViewDelegate>
 {
@@ -44,7 +44,7 @@
 @property(copy, nonatomic) NSArray *rootViewControllers; // @synthesize rootViewControllers=_rootViewControllers;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) long long preferredStyle; // @synthesize preferredStyle=_preferredStyle;
-- (void).cxx_destruct;
+- (void)cxx_destruct;
 - (void)_setupDelegateForNavigationController:(id)arg1 operation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (BOOL)navigationController:(id)arg1 shouldBeginInteractivePopFromViewController:(id)arg2 toViewController:(id)arg3;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
@@ -67,7 +67,6 @@
 - (void)viewDidLoad;
 - (void)keyDown:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)didChangeTopViewControllerForNavigationController:(id)arg1;
 - (void)didChangeSelectedViewController;
 - (void)willAddNavigationController:(id)arg1;
 - (void)segmentChanged:(id)arg1;
@@ -75,15 +74,13 @@
 - (void)setSelectedIndex:(unsigned long long)arg1 animated:(BOOL)arg2;
 - (void)setSelectedViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setRootViewControllers:(id)arg1 destination:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_setPreferredStyle:(long long)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_setPreferredStyle:(long long)arg1 animated:(BOOL)arg2;
 - (void)_setStyle:(long long)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_didChangeCollapsed;
-- (void)_setCollapsed:(BOOL)arg1;
 - (void)_updateStyleForViewController:(id)arg1 transitionContext:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) BOOL alternateTitleEnabled;
 - (id)tabBarView;
 - (long long)_effectiveStyleForViewController:(id)arg1;
-- (void)_setSelectedIndex:(long long)arg1 animated:(BOOL)arg2 sender:(id)arg3;
+- (void)_setSelectedIndex:(unsigned long long)arg1 animated:(BOOL)arg2 sender:(id)arg3;
 - (void)_setSelectedViewController:(id)arg1 animated:(BOOL)arg2 sender:(id)arg3;
 - (void)_didChangeSelectedViewControllerFromSender:(id)arg1;
 - (id)_popTransitoryViewControllersInNavigationController:(id)arg1 animated:(BOOL)arg2;
@@ -110,7 +107,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
+@property(readonly) NSUInteger hash;
 @property(readonly) Class superclass;
 
 @end

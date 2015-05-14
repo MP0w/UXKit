@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <UXKit/UXView.h>
+#import "UXView.h"
+#import "_UXSourceSplitViewDelegate-Protocol.h"
 
-#import "NSAccessibilityGroup.h"
+@import  AppKit;
 
 @class NSBox, NSCursor, NSLayoutConstraint, NSString, _UXContainerView;
 
@@ -32,7 +33,7 @@
 @property(readonly, nonatomic) NSBox *separator; // @synthesize separator=_separator;
 @property(readonly, nonatomic) _UXContainerView *detailView; // @synthesize detailView=_detailView;
 @property(readonly, nonatomic) _UXContainerView *masterView; // @synthesize masterView=_masterView;
-- (void).cxx_destruct;
+- (void)cxx_destruct;
 - (id)accessibilityRole;
 - (id)accessibilityChildren;
 - (id)accessibilitySplitters;
@@ -46,14 +47,14 @@
 - (void)_startSeparatorLiveResize;
 - (void)_resizeToWidth:(double)arg1;
 @property(readonly, nonatomic) NSCursor *separatorCursor;
-- (void)didChangeCollapsed;
+- (void)setCollapsed:(BOOL)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 @property(nonatomic) double masterWidth;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
+@property(readonly) NSUInteger hash;
 @property(readonly) Class superclass;
 
 @end

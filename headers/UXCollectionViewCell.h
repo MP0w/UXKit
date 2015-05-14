@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <UXKit/UXCollectionReusableView.h>
+#import "UXCollectionReusableView.h"
 
 @class NSView;
 
@@ -30,7 +30,6 @@
 - (BOOL)isAccessibilitySelectorAllowed:(SEL)arg1;
 - (BOOL)isAccessibilitySelected;
 - (id)_axSimulateClick:(unsigned long long)arg1 withNumberOfClicks:(unsigned long long)arg2;
-- (void)_axPerformDoubleClick;
 - (BOOL)accessibilityPerformPress;
 
 @end

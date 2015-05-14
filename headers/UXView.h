@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+@import  AppKit;
 
 @class NSArray, NSMutableArray, NSVisualEffectView, UXViewController;
 
@@ -32,7 +32,7 @@
 @property(nonatomic) BOOL accessibilityChildrenHidden; // @synthesize accessibilityChildrenHidden=_accessibilityChildrenHidden;
 @property(nonatomic) BOOL userInteractionEnabled; // @synthesize userInteractionEnabled=_userInteractionEnabled;
 @property(nonatomic, getter=isExclusiveTouch) BOOL exclusiveTouch; // @synthesize exclusiveTouch=_exclusiveTouch;
-- (void).cxx_destruct;
+- (void)cxx_destruct;
 - (id)accessibilityChildren;
 - (id)menuForEvent:(id)arg1;
 - (id)snapshotViewFromRect:(struct CGRect)arg1;
@@ -44,7 +44,6 @@
 @property(readonly, nonatomic) NSArray *eventTrackers;
 - (void)removeEventTracker:(id)arg1;
 - (void)addEventTracker:(id)arg1;
-- (BOOL)isInResponderChainOf:(id)arg1;
 - (void)_applyTintColorIfNotUXView:(id)arg1;
 - (void)touchesCancelledWithEvent:(id)arg1;
 - (void)touchesEndedWithEvent:(id)arg1;

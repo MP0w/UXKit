@@ -4,9 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTextView.h"
-
-#import "UITextInputTraits.h"
+@import  AppKit;
 
 @class NSString;
 
@@ -23,7 +21,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(nonatomic) BOOL enablesReturnKeyAutomatically;
-@property(readonly) unsigned long long hash;
+@property(readonly) NSUInteger hash;
 @property(nonatomic) long long keyboardAppearance;
 @property(nonatomic) long long keyboardType;
 @property(nonatomic) long long returnKeyType;

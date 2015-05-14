@@ -4,7 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSViewController.h"
+@import AppKit;
+
+#import "UXLayoutSupport-Protocol.h"
+#import "CDStructures.h"
 
 @class NSArray, NSResponder, NSString, UXNavigationController, UXNavigationItem, UXSourceController, UXTabBarItem, UXView;
 
@@ -35,7 +38,7 @@
 @property(nonatomic) unsigned long long edgesForExtendedLayout; // @synthesize edgesForExtendedLayout=_edgesForExtendedLayout;
 @property(nonatomic) long long modalPresentationStyle; // @synthesize modalPresentationStyle=_modalPresentationStyle;
 @property(nonatomic) BOOL isEditing; // @synthesize isEditing=_isEditing;
-- (void).cxx_destruct;
+- (void)cxx_destruct;
 - (id)menuForEvent:(id)arg1;
 - (id)bottomLayoutGuide;
 - (id)topLayoutGuide;
@@ -58,8 +61,6 @@
 - (void)removeFromParentViewController;
 - (void)removeChildViewControllerAtIndex:(long long)arg1;
 - (void)addChildViewController:(id)arg1;
-- (void)windowDidRecalculateKeyViewLoop;
-- (void)windowWillRecalculateKeyViewLoop;
 - (void)viewDidLiveResize;
 - (void)viewWillLiveResize;
 - (void)viewDidLayoutSubviews;

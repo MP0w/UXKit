@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSViewControllerPresentationAnimatorObject.h"
+@import AppKit;
 
 @class NSWindow, UXWindowController;
 
@@ -14,7 +14,7 @@
 }
 
 @property(retain) UXWindowController *windowController; // @synthesize windowController=_windowController;
-- (void).cxx_destruct;
+- (void)cxx_destruct;
 - (void)animateDismissalOfViewController:(id)arg1 fromViewController:(id)arg2;
 - (void)animatePresentationOfViewController:(id)arg1 fromViewController:(id)arg2;
 - (void)_windowWillClose:(id)arg1;

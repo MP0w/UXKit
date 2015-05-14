@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <UXKit/UXEventTracker.h>
+#import "UXEventTracker.h"
 
 @interface UXClickEventTracker : UXEventTracker
 {
-    long long _numberOfClicksRequired;
+    unsigned long long _numberOfClicksRequired;
 }
 
-@property(nonatomic) long long numberOfClicksRequired; // @synthesize numberOfClicksRequired=_numberOfClicksRequired;
+@property(nonatomic) unsigned long long numberOfClicksRequired; // @synthesize numberOfClicksRequired=_numberOfClicksRequired;
 - (id)description;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;

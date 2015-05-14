@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
 
-#import "NSDraggingDestination.h"
-#import "NSDraggingSource.h"
-#import "NSGestureRecognizerDelegate.h"
-#import "UXCollectionViewLayoutProxyDelegate.h"
 
-@class NSArray, NSEvent, NSGestureRecognizer, NSString, UXCollectionView, UXCollectionViewLayout, _UXCollectionViewLayoutProxy;
+@import  AppKit;
+@import  AppKit;
+@import  AppKit;
+#import "UXCollectionViewLayoutProxyDelegate-Protocol.h"
+
+@class NSArray, NSGestureRecognizer, NSString, UXCollectionView, UXCollectionViewLayout, _UXCollectionViewLayoutProxy;
 
 @interface _UXCollectionViewRearrangingCoordinator : NSObject <UXCollectionViewLayoutProxyDelegate, NSGestureRecognizerDelegate, NSDraggingSource, NSDraggingDestination>
 {
@@ -27,7 +27,6 @@
         unsigned int delegateImplementsDraggedTypesForIndexPaths:1;
         unsigned int delegateImplementsPreferredDraggingFormation:1;
         unsigned int delegateImplementsCreatedDraggingSessionForItemsAtIndexPaths:1;
-        unsigned int delegateImplementsNamesOfPromisedFilesForItemsAtIndexPaths:1;
         unsigned int delegateImplementsDraggingSessionSourceOperationMaskForDraggingContext;
         unsigned int delegateImplementsDraggingSessionWillBeginAtPoint:1;
         unsigned int delegateImplementsDraggingSessionMovedToPoint:1;
@@ -44,17 +43,13 @@
     NSArray *_movedIndexPaths;
     NSArray *_exchangedIndexPaths;
     struct CGPoint _screenPoint;
-    NSArray *_filePromiseIndexPaths;
-    BOOL _useFilePromise;
     BOOL _initialIndexPathsAreContiguous;
     NSGestureRecognizer *_gestureRecognizer;
     double _dragStartTime;
     double _collectionViewReloadLastCallTime;
-    double _dragEnteredTime;
     BOOL _updatesLayoutOnDrag;
     BOOL _autoscrolling;
     unsigned long long _sequenceNumber;
-    NSEvent *_mouseDownEvent;
     BOOL _isRearranging;
     BOOL _enabled;
     BOOL _allowDragOutsideCells;
@@ -97,17 +92,13 @@
 - (unsigned long long)draggingUpdated:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;
 - (BOOL)_shouldHandleExternalDrop:(id)arg1;
-- (id)namesOfPromisedFilesDroppedAtDestination:(id)arg1;
 - (void)draggingSession:(id)arg1 endedAtPoint:(struct CGPoint)arg2 operation:(unsigned long long)arg3;
 - (void)draggingSession:(id)arg1 movedToPoint:(struct CGPoint)arg2;
 - (void)draggingSession:(id)arg1 willBeginAtPoint:(struct CGPoint)arg2;
-- (void)_createdDraggingSession:(id)arg1 forItemsAtIndexPaths:(id)arg2;
-- (void)dragImage:(id *)arg1 at:(struct CGPoint *)arg2 event:(id)arg3;
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (void)_autoscrollWithWindowLocation:(struct CGPoint)arg1;
 - (void)_moveItemsAtIndexPaths:(id)arg1 toIndexPaths:(id)arg2;
 - (void)_beginDraggingSessionForIndexPaths:(id)arg1;
-- (id)_imageForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (void)resetDragGestureRecogizer;
 - (void)_finishRearrangingForLocation:(struct CGPoint)arg1 shouldComplete:(BOOL)arg2;
@@ -130,7 +121,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
+@property(readonly) NSUInteger hash;
 @property(readonly) Class superclass;
 
 @end

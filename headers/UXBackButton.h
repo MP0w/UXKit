@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSButton.h"
+@import  AppKit;
 
 @class NSLayoutConstraint;
 
@@ -17,7 +17,7 @@
 + (Class)cellClass;
 @property(readonly, nonatomic) NSLayoutConstraint *widthConstraint; // @synthesize widthConstraint=_widthConstraint;
 @property(nonatomic) BOOL hidesTitle; // @synthesize hidesTitle=_hidesTitle;
-- (void).cxx_destruct;
+- (void)cxx_destruct;
 - (void)setTitle:(id)arg1;
 - (id)init;
 

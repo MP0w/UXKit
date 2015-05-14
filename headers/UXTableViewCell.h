@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <UXKit/UXCollectionViewCell.h>
+#import "UXCollectionViewCell.h"
 
 @class NSColor, NSLayoutConstraint, NSMutableArray, UXLabel, UXView, _UXButton;
 
@@ -56,7 +56,7 @@
 @property(retain, nonatomic) UXView *selectedBackgroundView; // @synthesize selectedBackgroundView=_selectedBackgroundView;
 @property(retain, nonatomic) UXView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
+- (void)cxx_destruct;
 - (id)accessibilityLabel;
 - (unsigned long long)_detailTextAlignment;
 - (void)_configureInternalAccessoryViewForType:(long long)arg1;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+
 
 @class NSArray, NSMutableArray, NSString, NSView, UXBarButtonItem, UXLabel;
 
@@ -31,7 +31,7 @@
 @property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
 @property(retain, nonatomic) NSView *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) UXBarButtonItem *backBarButtonItem; // @synthesize backBarButtonItem=_backBarButtonItem;
-- (void).cxx_destruct;
+- (void)cxx_destruct;
 - (void)_removeAllChildItems;
 - (void)removeChildItem:(id)arg1;
 - (void)addChildItem:(id)arg1;

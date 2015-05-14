@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <UXKit/UXView.h>
+#import "UXView.h"
 
-#import "NSAccessibilityStaticText.h"
+@import  AppKit;
 
 @class NSAttributedString, NSColor, NSFont, NSString, NSTextField;
 
@@ -27,7 +27,7 @@
 @property(nonatomic) struct CGSize shadowOffset; // @synthesize shadowOffset=_shadowOffset;
 @property(retain, nonatomic) NSColor *shadowColor; // @synthesize shadowColor=_shadowColor;
 @property(retain, nonatomic) NSColor *textColor; // @synthesize textColor=_textColor;
-- (void).cxx_destruct;
+- (void)cxx_destruct;
 - (id)accessibilityRoleDescription;
 - (void)setAccessibilityRoleDescription:(id)arg1;
 - (id)accessibilityRole;
@@ -52,7 +52,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
+@property(readonly) NSUInteger hash;
 @property(readonly) Class superclass;
 
 @end

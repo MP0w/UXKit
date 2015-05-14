@@ -4,7 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <UXKit/UXBar.h>
+#import "UXBar.h"
+
+#import "UXNavigationControllerDelegate-Protocol.h"
 
 @class NSArray, NSImage, NSMutableArray, NSView, UXNavigationItem, _UXNavigationItemContainerView;
 
@@ -48,7 +50,7 @@
 @property(nonatomic) struct NSEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property(nonatomic, getter=isTranslucent) BOOL translucent; // @synthesize translucent=_translucent;
 @property(nonatomic) __weak id <UXNavigationBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+- (void)cxx_destruct;
 - (void)setNeedsRecalcuateWindowKeyViewLoop;
 - (void)recalculateKeyViewLoop;
 - (void)_completeInteractiveTransition:(BOOL)arg1;
@@ -58,7 +60,6 @@
 - (void)_snapshot;
 - (id)_popNavigationItemAnimated:(BOOL)arg1 duration:(double)arg2;
 - (void)_pushNavigationItem:(id)arg1 animated:(BOOL)arg2 duration:(double)arg3;
-- (id)buttonForAction:(SEL)arg1;
 - (void)_updateTitleView;
 - (id)_popNavigationItem;
 - (void)_removeItem:(id)arg1;

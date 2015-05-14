@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <UXKit/UXEventTracker.h>
+#import "UXEventTracker.h"
 
 @class NSMutableArray, NSMutableSet;
 
@@ -28,7 +28,7 @@
 }
 
 @property(nonatomic) double scale; // @synthesize scale=_scale;
-- (void).cxx_destruct;
+- (void)cxx_destruct;
 - (struct CGPoint)locationOfTouch:(unsigned long long)arg1 inView:(id)arg2;
 - (struct CGPoint)locationOfTouch:(id)arg1;
 - (id)_touchForTouchIdentity:(id)arg1;

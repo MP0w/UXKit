@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+@import AppKit;
 
 @class NSString, UXCollectionView, UXCollectionViewLayoutAttributes;
 
@@ -17,10 +17,8 @@
         unsigned int updateAnimationCount:5;
         unsigned int wasDequeued:1;
     } _reusableViewFlags;
-    BOOL _isFloatingPinned;
 }
 
-@property(readonly, nonatomic) BOOL isFloatingPinned; // @synthesize isFloatingPinned=_isFloatingPinned;
 @property(readonly, copy, nonatomic) NSString *reuseIdentifier; // @synthesize reuseIdentifier=_reuseIdentifier;
 - (struct CGImage *)_snapshot:(BOOL)arg1;
 - (BOOL)_wasDequeued;
@@ -28,7 +26,6 @@
 - (void)_clearUpdateAnimation;
 - (void)_addUpdateAnimation;
 - (BOOL)_isInUpdateAnimation;
-- (void)setIsFloatingPinned:(BOOL)arg1;
 - (void)_setCollectionView:(id)arg1;
 - (id)_collectionView;
 - (void)_setReuseIdentifier:(id)arg1;
